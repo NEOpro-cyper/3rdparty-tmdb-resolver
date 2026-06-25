@@ -133,7 +133,14 @@ async function handle(req, res) {
     title: item.title ?? dec.data.title ?? null,
     audio: item.audio ?? null,
     poster: item.preview_url ?? null,
-    stream_url: streamUrl,
+    sources: [
+  {
+    name: "Multi",
+    url: streamUrl,
+    flag: "us",
+    type: "hls",
+  },
+],
     subtitles,
   });
 }
